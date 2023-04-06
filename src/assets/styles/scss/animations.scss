@@ -1,0 +1,26 @@
+.advantage {
+  .card {
+    &.active {
+      @for $var from 1 to 6 {
+        $delay: $var * 0.2;
+        &:nth-child(#{$var}) {
+          @if $var==1 {
+            transition: all 0.8s ease 0s;
+          } @else {
+            transition: all 0.8s ease #{$delay + s};
+          }
+        }
+      }
+    }
+  }
+}
+
+// @keyframes move_eye {
+//   from {
+//     width: 0%;
+//   }
+
+//   to {
+//     width: 26%;
+//   }
+// }
